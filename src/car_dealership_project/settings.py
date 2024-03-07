@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     'rest_framework.authtoken',
+    'car_dealership_api',
 ]
 
 MIDDLEWARE = [
