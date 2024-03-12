@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializers import FeatureSerializer
-from .models.feature import Feature
+from ..serializers.feature_serializer import FeatureSerializer
+from ..models.feature import Feature
 
 
 class FeatureViewSet(viewsets.ModelViewSet):

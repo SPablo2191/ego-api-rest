@@ -14,3 +14,4 @@ route.register("vehicles", VehicleViewSet)
 route.register("categories", VehicleTypeViewSet)
 route.register("features", FeatureViewSet)
 route.register("sections", SectionViewSet)
+urlpatterns = route.urls

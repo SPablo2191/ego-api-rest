@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models.data_sheet import DataSheet
-from .serializers import DataSheetSerializer
+from ..models.data_sheet import DataSheet
+from ..serializers.data_sheet_serializer import DataSheetSerializer
 
 
 class DataSheetViewSet(viewsets.ModelViewSet):

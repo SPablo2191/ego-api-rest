@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models.data_sheet import DataSheet
+from ..models.data_sheet import DataSheet
 
 
 class DataSheetSerializer(serializers.ModelSerializer):
