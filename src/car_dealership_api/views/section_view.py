@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import Section
+from .models.section import Section
 from .serializers import SectionSerializer
 
 

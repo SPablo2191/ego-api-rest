@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .serializers import VehicleSerializer
-from .models import Vehicle
+from .models.vehicle import Vehicle
 
 
 class VehicleViewSet(viewsets.ModelViewSet):
