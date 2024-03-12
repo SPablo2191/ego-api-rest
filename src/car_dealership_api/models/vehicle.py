@@ -15,7 +15,7 @@ class Vehicle(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.model} {self.model} ({self.year})"
+        return f"{self.model} ({self.year})"
 
 
 @admin.register(Vehicle)
