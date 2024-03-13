@@ -25,11 +25,7 @@ Proyecto API-REST para EGO basado en una concesionaria de autos.
 ## Instalación🤖
 Para hacer uso del proyecto de manera local se puede realizar de 2 formas distintas:
 ### Uso de docker:
-1) Basta con disponer [docker engine](https://docs.docker.com/engine/install/) en la computadora ya sea usando [windows](https://docs.docker.com/desktop/install/windows-install/) o [linux](https://docs.docker.com/desktop/install/linux-install/) y ejecutar el siguiente comando:
-```cmd
-docker-compose up --build
-```
-2) crear .env en directorio raiz con el siguiente formato:
+1) crear .env en directorio raiz con el siguiente formato:
 ```json
 DB_USER = postgres
 DB_PASSWORD = postgres
@@ -38,7 +34,21 @@ DB_PORT= 5432
 DB_NAME= postgres
 ```
 Se usa un package para leer dicho archivo y cargarlo en el settings.py del proyecto
-3) Listo! Ya se puede acceder a la instancia
+2) Se debe disponer [docker engine](https://docs.docker.com/engine/install/) en la computadora ya sea usando [windows](https://docs.docker.com/desktop/install/windows-install/) o [linux](https://docs.docker.com/desktop/install/linux-install/) y ejecutar el siguiente comando:
+```cmd
+docker-compose up --build
+```
+3) a continuación en la terminal del servicio web debemos ejecutar los siguiente comandos:
+```bash
+python src/manage.py migrate
+```
+Que realizara la migraciones corespondientes en la bdd; y el siguiente comando:
+```bash
+python src/manage.py createsuperuser
+```
+Para tener un usuario que pueda acceder al menu de administración de django.
+4) Listo! Ya se puede acceder a la instancia
+
 ### Con entorno virtual y base de datos psql
 1) Ingresar los siguiente comandos en consola:
 ```cmd
@@ -75,15 +85,15 @@ DB_NAME= [nombre de la db ej:postgres]
 Se usa un package para leer dicho archivo y cargarlo en el settings.py del proyecto
 4) Una vez los paquetes fueron instalados con exito, se debe realizar las migraciones:
 ```cmd
-python manage.py migrate
+python src/manage.py migrate
 ```
 5) Crear un superusuario para acceder al modulo admin:
 ```cmd
-python manage.py createsuperuser
+python src/manage.py createsuperuser
 ```
 6) Levantar el servidor:
 ```cmd
-python manage.py runserver
+python src/manage.py runserver
 ```
 6) ¡Listo! ya puede visitar la pagina web en este [enlace](http://127.0.0.1:8000/).
 
