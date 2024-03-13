@@ -6,6 +6,7 @@ from ..models.vehicle import Vehicle
 class VehicleViewSet(viewsets.ModelViewSet):
     queryset = Vehicle.objects.all()
     serializer_class = VehicleSerializer
+    http_method_names = ["get", "post", "retrieve", "put", "patch"]
     ordering_fields = ["model", "year", "price"]
 
     def get_queryset(self):

@@ -7,7 +7,13 @@ class Section(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     image_url = models.CharField(max_length=100)
-    data_sheet = models.ForeignKey(DataSheet, on_delete=models.CASCADE)
+    data_sheet = models.ForeignKey(
+        DataSheet,
+        on_delete=models.CASCADE,
+        related_name="data_sheet_section",
+        null=True,
+        blank=True,
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
